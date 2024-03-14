@@ -2,13 +2,18 @@
 This is a package for Echo-Planar MRI susceptibility artifact correction implemented in PyTorch.
 
 ## Installation
-Python package dependencies are listed in `requirements.txt`.
+From PyPI:
+```bash
+pip install PyHySCO
+```
+
+Python package dependencies (automatically installed by pip) are listed in `requirements.txt`.
 It is suggested to run the python file `tests/test_all.py` to ensure all tests are passing and the code is setup properly.
 
 ## Usage
 
 ### Command Line Correction
-The program can be run directly from a terminal or command line by using the ```python``` command to run the file ```pyhysco.py```.
+The program can be run directly from a terminal or command line by using the ```python``` command to run the file ```pyhysco.py``` or if installed using pip the command ```pyhysco```.
 Supplying the following required parameters:
 * file_1: file path of first image (stored as nii.gz) with phase encoding direction opposite of file_2
 * file_2: file path of second image (stored as nii.gz) with phase encoding direction opposite of file_1
@@ -18,11 +23,11 @@ Use the help flag (--help) to see optional parameters available.
 
 Minimal Usage:
 ```bash
-python pyhysco.py --file_1 <image1> --file_2 <image2> --ped <phase encoding direction>
+pyhysco --file_1 <image1> --file_2 <image2> --ped <phase encoding direction>
 ```
 Example:
 ```bash
-python pyhysco.py --file_1 image1.nii.gz --file_2 image2.nii.gz --ped 1 --output_dir results/ --max_iter 25
+pyhysco --file_1 image1.nii.gz --file_2 image2.nii.gz --ped 1 --output_dir results/ --max_iter 25
 ```
 
 ### Write a Correction Script
