@@ -61,3 +61,6 @@ opt.visualize()
 
 ### Examples and Further Documentation
 There are a set of examples in the `examples` directory. Full API documentation is in the `docs` directory. See also `Instructions.md` for an overview of the correction process.
+
+## Acknowledgements
+This material is partly based upon work supported by the US National Science Foundation Graduate Research Fellowship under Grant No. 1937971 and NSF Grants DMS-1751636 and DMS-2038118. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the funding agencies.
