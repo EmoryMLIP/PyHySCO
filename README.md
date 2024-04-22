@@ -3,16 +3,18 @@ This is a package for Echo-Planar MRI susceptibility artifact correction impleme
 
 ## Associated Publication
 PyHySCO: GPU-Enabled Susceptibility Artifact Distortion Correction in Seconds
+
 https://arxiv.org/abs/2403.10706
 
 Please cite as
-
+```
 @article{julian2024pyhysco,
       title={PyHySCO: GPU-Enabled Susceptibility Artifact Distortion Correction in Seconds}, 
       author={Abigail Julian and Lars Ruthotto},
       year={2024},
       journal = {arXiv preprint arXiv:2403.10706}
 }
+```
 
 ## Installation
 From PyPI:
