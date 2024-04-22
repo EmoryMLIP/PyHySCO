@@ -32,9 +32,9 @@ class InitializationMethod(ABC):
         pass
 
 
-class InitializeOT(InitializationMethod):
+class InitializeCF(InitializationMethod):
     """
-    Defines parallelized one-dimensional optimal transport based initialization scheme.
+    Defines parallelized one-dimensional initialization scheme from Chang & Fitzpatrick using optimal transport.
     """
     def __init__(self):
         super().__init__()
@@ -48,9 +48,9 @@ class InitializeOT(InitializationMethod):
         data : `EPIMRIDistortionCorrection.DataObject`
             Original image data.
         blur_result : boolean, optional
-            Flag to apply Gaussian blur to `init_OT` result before returning (default is True).
+            Flag to apply Gaussian blur to `init_CF` result before returning (default is True).
         args, kwargs : Any
-            Provided shift, if given (see method `init_OT`).
+            Provided shift, if given (see method `init_CF`).
 
         Returns
         ----------
@@ -58,13 +58,13 @@ class InitializeOT(InitializationMethod):
             Initial field map.
         """
         if blur_result:
-            return self.blur(self.init_OT(data, *args, **kwargs).reshape(list(m_plus(data.m))), data.omega, data.m)
+            return self.blur(self.init_CF(data, *args, **kwargs).reshape(list(m_plus(data.m))), data.omega, data.m)
         else:
-            return self.init_OT(data, *args, **kwargs)
+            return self.init_CF(data, *args, **kwargs)
 
-    def init_OT(self, data, shift=2):
+    def init_CF(self, data, shift=2):
         """
-        Optimal Transport based initialization scheme.
+        Optimal Transport based initialization scheme; an implementation of Chang & Fitzpatrick correction.
 
         Performs parallel 1-D optimal transport in distortion dimension to estimate field map.
 

@@ -19,7 +19,7 @@ def main():
     parser.add_argument("--correction", choices=['jac', 'lstsq'], default='jac', help="Use (Jacobian ['jac']/ Least Squares ['lstsq']) correction (default=lstsq)")
     parser.add_argument("--averaging", default=myAvg1D, help="LinearOperator to use as averaging operator (default=myAvg1D)")
     parser.add_argument("--derivative", default=myDiff1D, help="LinearOperator to use as derivative operator (default=myDiff1D)")
-    parser.add_argument("--initialization", default=InitializeOT, help="Initialization method to use (default=InitializeOT)")
+    parser.add_argument("--initialization", default=InitializeCF, help="Initialization method to use (default=InitializeCF)")
     parser.add_argument("--regularizer", default=myLaplacian3D, help="LinearOperator to use for smoothness regularization term (default=myLaplacian3D)")
     parser.add_argument("--PC", default=JacobiCG, help="Preconditioner to use (default=JacobiCG)")
 

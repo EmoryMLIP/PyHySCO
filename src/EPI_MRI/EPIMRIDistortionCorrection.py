@@ -39,7 +39,7 @@ class EPIMRIDistortionCorrection:
 	rho : float, optional
 		augmentation parameter for proximal term (default is 0.0)
 	initialization : Class (subclass of `InitializationMethods.InitializationMethod`), optional
-		class to use for the initialization of the field map (default is `InitializationMethods.InitializeOT`)
+		class to use for the initialization of the field map (default is `InitializationMethods.InitializeCF`)
 	PC : Class (subclass of `Preconditioners.Preconditioner`), optional
 		preconditioner (default is `Preconditioners.JacobiCG`)
 
@@ -85,7 +85,7 @@ class EPIMRIDistortionCorrection:
 		most recent corrected image from dataObj.I2
 
 	"""
-	def __init__(self, data_obj, alpha, beta, averaging_operator=myAvg1D, derivative_operator=myDiff1D, regularizer=myLaplacian3D, rho=0.0, initialization=InitializeOT, PC=JacobiCG):
+	def __init__(self, data_obj, alpha, beta, averaging_operator=myAvg1D, derivative_operator=myDiff1D, regularizer=myLaplacian3D, rho=0.0, initialization=InitializeCF, PC=JacobiCG):
 		self.dataObj = data_obj
 		self.device = data_obj.device
 		self.dtype = data_obj.dtype
